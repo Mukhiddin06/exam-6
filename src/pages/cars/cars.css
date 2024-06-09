@@ -1,0 +1,119 @@
+/* General container style */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Cars wrapper style */
+.cars-wrapper {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Cars header style */
+.cars {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Button wrapper style */
+.btn-wrp {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Button style */
+.btn-cars {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cars:hover {
+    background-color: #0056b3;
+}
+
+/* Input wrapper style */
+.inp-wrp {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.inp-cars {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Table style */
+.cars-table {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #007bff;
+    color: white;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Button wrapper style for actions */
+.btn-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+/* Action button styles */
+.btn-edit, .btn-trash {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #007bff;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.btn-edit:hover, .btn-trash:hover {
+    color: #0056b3;
+}
+
+.fa-eye {
+    color: #007bff;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.fa-eye:hover {
+    color: #0056b3;
+}
