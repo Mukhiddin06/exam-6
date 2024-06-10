@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 import "./login.css";
 
 const Login = () => {
@@ -31,24 +33,12 @@ const Login = () => {
                 </div>
                 <div className="card-body">
                     <form id="submit" onSubmit={handleSubmit}>
-                        <input 
-                            type="text" 
-                            name="username" 
-                            onChange={handleChange} 
-                            placeholder="username" 
-                            className="card-user" 
-                        />
-                        <input 
-                            type="text" 
-                            name="password" 
-                            onChange={handleChange} 
-                            placeholder="password" 
-                            className="card-password" 
-                        />
+                        <TextField sx={{marginBottom:'10px', width:'400px'}} type="text" name="username" onChange={handleChange} className="card-user"  id="outlined-basic" label="Username" variant="outlined" />
+                        <TextField sx={{width:'400px'}} type="text" name="password"  onChange={handleChange} className="card-password" id="outlined-basic" label="Password" variant="outlined" />
                     </form>
                 </div>
                 <div className="card-foooter">
-                    <button type="submit" form="submit">login</button>
+                <Button type="submit" form="submit" variant="contained">login</Button>
                 </div>
             </div>
             </div> 

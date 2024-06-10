@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 import "./modal.css";
 import { nanoid } from "nanoid";
 
 const UserModal = (props) => {
-    const [form, setForm] = useState({});
-    const  {open, cars, setCars, toggle, car} = props
+    const [form, setForm] = useState({ status: props.status || 'open' });
+    const { open, cards, setCards, toggle, card, status } = props;
+
+    useEffect(() => {
+        setForm({ ...card, status: card.status || status });
+    }, [card, status]);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setForm({ ...form, [name]: value });
@@ -13,22 +18,17 @@ const UserModal = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(car.id){
-            let new_cars = cars.map((item)=>{
-                if(item.id === car.id){
-                    item.name = form.name ? form.name : item.name
-                    item.price = form.price ? form.price : item.price
-                    item.year = form.year ? form.year : item.year
-                    item.color = form.color ? form.color : item.color
-                    item.brand = form.brand ? form.brand : item.brand
+        if (card.id) {
+            let newCards = cards.map((item) => {
+                if (item.id === card.id) {
+                    return { ...item, name: form.name || item.name , status: form.status || item.status};
                 }
-                return item
-            })
-            setCars([...new_cars])
-        }else{
-            let id = nanoid() 
-            cars.push({...form, id})
-            setCars([...cars]);
+                return item;
+            });
+            setCards([...newCards]);
+        } else {
+            let id = nanoid();
+            setCards([...cards, { ...form, id}]);
         }
         toggle();
     };
@@ -40,11 +40,13 @@ const UserModal = (props) => {
             </ModalHeader>
             <ModalBody>
                 <form className="modal-form" id="submit" onSubmit={handleSubmit}>
-                    <input defaultValue={car.name} onChange={handleChange} type="text" placeholder="Name" name="name" className="modal-input" />
-                    <input defaultValue={car.price} onChange={handleChange} type="number" placeholder="Price" name="price" className="modal-input" />
-                    <input defaultValue={car.year} onChange={handleChange} type="date" placeholder="Year" name="year" className="modal-input" />
-                    <input defaultValue={car.color} onChange={handleChange} type="text" placeholder="Color" name="color" className="modal-input" />
-                    <input defaultValue={car.brand} onChange={handleChange} type="text" placeholder="Brand" name="brand" className="modal-input" />
+                    <input defaultValue={card.name} onChange={handleChange} type="text" placeholder="Name" name="name" className="modal-input" />
+                    <select value={form.status} onChange={handleChange} name="status" className="modal-select">
+                        <option value="open">Open</option>
+                        <option value="pending">Pending</option>
+                        <option value="inprog">In Progress</option>
+                        <option value="complete">Complete</option>
+                    </select>
                 </form>
             </ModalBody>
             <ModalFooter>

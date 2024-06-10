@@ -5,86 +5,104 @@
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.table-name {
-    text-align: center;
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
+.cards-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
-.table-wrapper {
-    overflow-x: auto;
-}
-.select-wrapper {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.table-select {
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-.table-select:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-.table table {
-    width: 100%;
-}
-.table thead {
-    background-color: #333;
-    color: #fff;
-}
-.table thead tr {
-    border-bottom: 2px solid #444;
-}
-.table thead td {
-    padding: 15px;
-    text-align: left;
-    font-weight: bold;
-}
-.table tbody tr {
-    border-bottom: 1px solid #ccc;
-}
-.table tbody tr:nth-child(even) {
+.single-card {
     background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 24%;
+    min-width: 250px;
 }
-.table tbody td {
-    padding: 15px;
+
+.single-card-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+    text-transform: capitalize;
 }
-.table tbody tr:hover {
+
+/* Jadval uslublari */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+thead {
     background-color: #f1f1f1;
 }
 
-.btn-wrapper {
+thead tr {
+    border-bottom: 2px solid #ddd;
+}
+
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Tugmalar uchun umumiy uslublar */
+.btns-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-cars,
+.btn-edit,
+.btn-trash {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cars {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-edit {
+    background-color: #ffc107;
+    color: white;
+}
+
+.btn-trash {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-cars:hover {
+    background-color: #0056b3;
+}
+
+.btn-edit:hover {
+    background-color: #e0a800;
+}
+
+.btn-trash:hover {
+    background-color: #c82333;
+}
+
+
+
+
+
+.btns-wrp{
+    margin-top: 15px;
     display: flex;
     justify-content: center;
-    align-items: center;
-}
-
-.btn-change {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin: 0 10px;
-}
-
-.btn-change:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
-.text-btn {
-    font-size: 1.2rem;
-    font-weight: bold;
 }

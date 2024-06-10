@@ -7,9 +7,6 @@ const Sidebar =() =>{
         <NavLink to="/main" className="navlink">
             Products
         </NavLink>
-        <NavLink to="/main/cars" className="navlink">
-            Cars
-        </NavLink>
         <NavLink to="/main/todos" className="navlink">
             Todos
         </NavLink>
